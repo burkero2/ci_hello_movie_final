@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'movie_app_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        dj_databse_url.parse(os.environ.get('DATABASE_IRL'))
+        dj_databse_url.parse(os.environ.get('DATABASE_URL'))
     }
 }
 
