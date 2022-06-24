@@ -14,6 +14,7 @@ class TestModels(TestCase):
             imdb_link= "https://www.imdb.com/title/tt0083658/",)
         self.assertFalse(movie.watched)
     
+    # Removed and put into the Coverage unit
     def test_movie_string_method_returns_title(self):
         movie = Movie.objects.create(
             title= "Blade Runner",

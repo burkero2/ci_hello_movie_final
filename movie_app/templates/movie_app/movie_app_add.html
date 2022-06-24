@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Add Movie Page</title>
 </head>
 <body>
-    <h1>Movie List</h1>
-    <h4>Add a Movie</h4>
-    <form method="POST" action="add">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add Movie</button>
-    </form>
+    <a href = "/"><img src = "https://codeinstitute.s3.amazonaws.com/Django%20Content/Hello%20Django%20MiniChallenges/Code_institute-logo%20%281%29.png" alt = "Code Institute logo" id = "formImage" /></a>
+    <h1 class = "formHeader">Movie List</h1>
+    <h4 class = "formHeader">Add a movie</h4>
+        <form method="POST" action="add">
+            {% csrf_token %}
+            
+                {{ form.as_p }}
+            
+            <button type="submit">Add Movie</button>
+        </form>
+        <p id = "addLink"><a href = "/">Return to home page</a></p>
 </body>
 </html>

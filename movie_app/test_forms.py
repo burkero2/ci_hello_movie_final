@@ -10,7 +10,8 @@ class TestDjango(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('title', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
-
+        
+    # Removed and placed in Coverage Unit
     def test_description_field_is_not_required(self):
         form = MovieForm({
             "title": "Blade Runner",

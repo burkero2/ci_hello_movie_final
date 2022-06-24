@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie App Home Page</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie App Home Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Movie List</h1>
-    <h4>List movies you have watched or want to watch</h4>
+
+    <img id = "homeImage" src = "https://codeinstitute.s3.amazonaws.com/Django%20Content/Hello%20Django%20MiniChallenges/Code_institute-logo%20%281%29.png" alt = "Code Institute logo"  />
+    <h1 class = "textHeader">Movie List</h1>
+    <h4 class = "textHeader">List movies you have watched or want to watch</h4>
+    
+
 
     <table>
         <tr>
@@ -19,14 +29,15 @@
             <th>Description</th>
             <th>Imdb Page</th>
             <th>Rating (/5)</th>
+            <th colspan ="3"></th>
         </tr>
         {% for movie in movies %}
             <tr>
-                <td style = "border:1px solid grey; background-color: black; color: white;">{{ movie.id }}</td>
+                <td class = "id_column">{{ movie.id }}</td>
                 {% if movie.watched %}
                     <td><strike>{{ movie.title }}</strike></td>
                 {% else %}
-                    <td>{{ movie.title }}</td>
+                    <td class = "movie_column">{{ movie.title }}</td>
                 {% endif %}
                 <td>{{ movie.director }}</td>
                 <td>{{ movie.genre }}</td>
@@ -48,7 +59,8 @@
             
         {% endfor %}
     </table>
-    
-    <a href = "/add">Add a movie</a>
+
+        <p id = "addLink"><a href = "/add">Add a movie</a></p>
+    </div>
 </body>
 </html>
