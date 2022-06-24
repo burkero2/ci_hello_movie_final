@@ -7,7 +7,7 @@
 <title>Movie App Home Page</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -22,7 +22,7 @@
 
     <table>
         <tr>
-            <th>Id</th>
+
             <th>Movie Title</th>
             <th>Director</th>
             <th>Genre</th>
@@ -33,11 +33,10 @@
         </tr>
         {% for movie in movies %}
             <tr>
-                <td class = "id_column">{{ movie.id }}</td>
                 {% if movie.watched %}
-                    <td><strike>{{ movie.title }}</strike></td>
+                    <td class = "title_column"><strike>{{ movie.title }}</strike></td>
                 {% else %}
-                    <td class = "movie_column">{{ movie.title }}</td>
+                    <td class = "title_column">{{ movie.title }}</td>
                 {% endif %}
                 <td>{{ movie.director }}</td>
                 <td>{{ movie.genre }}</td>

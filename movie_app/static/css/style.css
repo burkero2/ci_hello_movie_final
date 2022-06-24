@@ -1,11 +1,3 @@
-/* Red: #e84610 */
-/* grey white: #e6ecf0 */
-/* grey black: #4a4a4f */
-/* blue: #009FE3 */
-
-/* red/pink: #ff5a60 */
-
-
 body{
     font-family: 'Montserrat', sans-serif;
 
@@ -90,12 +82,11 @@ td{
     background-color: white;
 }
 
-.id_column{
+.title_column{
     background-color: #e6ecf0;
     color: #4a4a4f;
-}
-.movie_column{
-    font-weight: 600;
+    font-size: 18px; 
+    /* font-weight: 600; */
 }
 
 button {
